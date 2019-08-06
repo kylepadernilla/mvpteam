@@ -4,7 +4,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="design.css">
+  <link rel="stylesheet" href="../stylesheets/style.css">
 
 </head>
 <body>
@@ -35,8 +35,11 @@
    </div>
   </nav>
 
-<h1>GPA calculator</h1>
+<h1>Course calculator</h1>
 
+<h2 class="CourseName">CourseName</h2>
+
+<br>
 <p class="topheader">
 
 <span>Input #</span>
@@ -45,12 +48,14 @@
 
 </p>
 
+
+<!-- Inputs -->
 <p>
 <p>Input 1:
 
-<input type="number" name="input1" class="input1" value="">
+<input type="text" name="input1" class="input1A" value="">
 
-<input type="text" name="input2" class="input2" value="">
+<input type="text" name="input2" class="input1B" value="">
 </p>
 
 </p>
@@ -58,9 +63,9 @@
 <p>
 <p>Input 2:
 
-<input type="text" name="input1" class="input1" value="">
+<input type="text" name="input1" class="input2A" value="">
 
-<input type="text" name="input2" class="input2" value="">
+<input type="text" name="input2" class="input2B" value="">
 </p>
 
 </p>
@@ -68,9 +73,9 @@
 <p>
 <p>Input 3:
 
-<input type="text" name="input1" class="input1" value="">
+<input type="text" name="input1" class="input3A" value="">
 
-<input type="text" name="input2" class="input2" value="">
+<input type="text" name="input2" class="input3B" value="">
 </p>
 
 </p>
@@ -78,9 +83,9 @@
 <p>
 <p>Input 4:
 
-<input type="text" name="input1" class="input1" value="">
+<input type="text" name="input1" class="input4A" value="">
 
-<input type="text" name="input2" class="input2" value="">
+<input type="text" name="input2" class="input4B" value="">
 </p>
 
 </p>
@@ -88,14 +93,16 @@
 <p>
 <p>Input 5:
 
-<input type="text" name="input1" class="input1" value="">
+<input type="text" name="input1" class="input5A" value="">
 
-<input type="text" name="input2" class="input2" value="">
+<input type="text" name="input2" class="input5B" value="">
 </p>
 
-</p>]
+</p>
 
-<script src= "script.js"> </script>
+<button type="button" class="calculateButton">Calculate!</button>
+
+<script src= "../javascript/script.js"> </script>
 
 
 </body>
