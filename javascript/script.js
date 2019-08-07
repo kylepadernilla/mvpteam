@@ -1,63 +1,62 @@
-	var quiz2 = document.querySelector(".input1").value;
+const calcbtn= document.querySelector(".calculateButton");
 
 function setGrades() {
+	// Define those variables!
+		var input1A = parseFloat(document.querySelector(".input1A").value);
+		var input2A = parseFloat(document.querySelector(".input2A").value);
+		var input3A = parseFloat(document.querySelector(".input3A").value);
+		var input4A = parseFloat(document.querySelector(".input4A").value);
+		var input5A = parseFloat(document.querySelector(".input5A").value);
+
+
+		//set the weight array.
+		var grades= [input1A, input2A, input3A, input4A, input5A];
+
 		// Define those variables!
+			var input1B = parseFloat(document.querySelector(".input1B").value);
+			var input2B = parseFloat(document.querySelector(".input2B").value);
+			var input3B = parseFloat(document.querySelector(".input3B").value);
+			var input4B = parseFloat(document.querySelector(".input4B").value);
+			var input5B = parseFloat(document.querySelector(".input5B").value);
 
 
-		var quiz3 = parseFloat(document.getElementById('quiz3').value);
+			//set the weight array.
+			var weight= [input1B, input2B, input3B, input4B, input5B];
 
-		// Calculate the total points earned!
-		var totalPoints = quiz1 + quiz2 + quiz3 + quiz4 + quiz5 + quiz6 + quiz7 + quiz8 + quiz9 + quiz10 + exam1 + exam2 + exam3 + extra;
-		document.getElementById('total').value = totalPoints;
+			//for loop that runs from 0 to length of array.
+			//check if at position blabla it is NaN. if it is, then just add position 0 to current position. if not, then add a counter.
 
-		// Select letter grade!
-		if(totalPoints >= 184){
-			document.getElementById('letter').value = "A";
-		}
+			var i;
+			var sum=0;
 
-		else if(183 >= totalPoints && totalPoints >= 178){
-			document.getElementById('letter').value = "A-";
-		}
 
-		else if(177 >= totalPoints && totalPoints >= 172){
-			document.getElementById('letter').value = "B+";
-		}
 
-		else if(171 >= totalPoints && totalPoints >= 164){
-			document.getElementById('letter').value = "B";
-		}
+			for(i=0; i< weight.length; i++)
+			{
 
-		else if(163 >= totalPoints && totalPoints >= 158){
-			document.getElementById('letter').value = "B-";
-		}
+				//divid
+				let divide=grades[i] / 100;
 
-		else if(157 >= totalPoints && totalPoints >= 152){
-			document.getElementById('letter').value = "C+";
-		}
+				if (isNaN(weight[i]))
+				{
+						var weightPortion= weight.slice(0,i);
+						var answer= weightPortion[i] * divide;
+						break;
+				}
 
-		else if(151 >= totalPoints && totalPoints >= 144){
-			document.getElementById('letter').value = "C";
-		}
+				else{
 
-		else if(143 >= totalPoints && totalPoints >= 138){
-			document.getElementById('letter').value = "C-";
-		}
+				var answer= weight[i]* divide;
 
-		else if(137 >= totalPoints && totalPoints >= 132){
-			document.getElementById('letter').value = "D+";
-		}
 
-		else if(131 >= totalPoints && totalPoints >= 124){
-			document.getElementById('letter').value = "D";
-		}
+			}
+				//add in another array.
+				sum= sum+ answer;
+			};
 
-		else if(123 >= totalPoints && totalPoints >= 118){
-			document.getElementById('letter').value = "D-";
-		}
 
-		else{
-			document.getElementById('letter').value = "E";
-		}
+		document.querySelector(".total").value = sum;
+
 	}
 
-  console.log(quiz2);
+	calcbtn.addEventListener("click", setGrades, false); //reset button action listener.

@@ -1,12 +1,20 @@
 .topheader span{
-padding-right: 80px;
+padding-right:85px;
 }
-
 .calculateButton{
 
 margin-left: 30px;
 }
 
-.topheader p{
-margin-left: 30px;
+.courseMarks input{
+width: 50px;
+margin-left:80px;
+}
+
+.output{
+margin-top: 30px;
+}
+
+.output input{
+  width:100px;
 }
