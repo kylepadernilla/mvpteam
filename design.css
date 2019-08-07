@@ -65,9 +65,9 @@ body {
 
   .features {
     margin: 4em auto;
-    padding: 75px;
+    padding-top:4em;
     position:relative;
-    top:400px;
+    top:300px;
 
   }
   .feature-title {
@@ -93,7 +93,7 @@ body {
   background-color: #589b37;
   border: 1px solid #589b37;
   color: #fff;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 .features .btn:hover {
   background-color: #333;
