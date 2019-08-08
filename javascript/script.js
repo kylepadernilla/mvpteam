@@ -27,18 +27,18 @@ function setGrades() {
 			//for loop that runs from 0 to length of array.
 
 
-			var i;
+			var i,arrayPointer;
 			var sum=0;
 
 			for(i=0; i< weight.length; i++)
 			{
 
+
 				//divide int
 				let divide=grades[i] / 100;
 
-				console.log(grades);
+				if(arrayPointer != 0){
 
-				//check if at position blabla it is NaN. if it is, then just add position 0 to current position. if not, then add a counter.
 				if (isNaN(weight[i]))
 				{
 						var weightPortion= weight.slice(0,i);
@@ -49,15 +49,82 @@ function setGrades() {
 				else{
 
 				var answer= weight[i]* divide;
-
+			}
 
 			}
+
+			else{
+			var answer= weight[i]* divide;
+		}
 				//add in another array.
+				arrayPointer++;
+
 				sum= sum+ answer;
 			};
 
+		let sumAnswer= sum.toFixed(2) + "%";
+		document.querySelector(".total").value = sumAnswer;
 
-		document.querySelector(".total").value = sum + "%";
+		if(sum < 50)
+		{
+			document.querySelector(".gpaOutput").value = 0;
+
+		}
+
+		else if(sum >= 50 && sum <= 54)
+		{
+				document.querySelector(".gpaOutput").value = "1.00";
+		}
+
+		else if(sum >= 55 && sum <= 59)
+		{
+				document.querySelector(".gpaOutput").value = "1.33";
+		}
+
+		else if(sum >= 60 && sum <= 62)
+		{
+				document.querySelector(".gpaOutput").value="1.67";
+		}
+
+		else if(sum >= 63 && sum <= 66)
+		{
+				document.querySelector(".gpaOutput").value = "2.00";
+		}
+
+		else if(sum >= 67 && sum <= 69)
+		{
+				document.querySelector(".gpaOutput").value = "2.33";
+		}
+
+		else if(sum >= 70 && sum <= 72)
+		{
+				document.querySelector(".gpaOutput").value = "2.67";
+		}
+
+		else if(sum >= 73 && sum <= 76)
+		{
+				document.querySelector(".gpaOutput").value = "3.00";
+		}
+
+		else if(sum >= 77 && sum <= 79)
+		{
+				document.querySelector(".gpaOutput").value = "3.33";
+		}
+
+		else if(sum >= 80 && sum <= 84)
+		{
+				document.querySelector(".gpaOutput").value = "3.67";
+		}
+
+		else if(sum >= 85 && sum <= 89)
+		{
+				document.querySelector(".gpaOutput").value = "4.00";
+		}
+
+		else if(sum >= 90)
+		{
+				document.querySelector(".gpaOutput").value = "4.33";
+		}
 
 	}
 
