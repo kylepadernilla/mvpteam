@@ -22,7 +22,7 @@
         <a class="nav-link" href="index.html">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="calc.html">My Courses</a>
+        <a class="nav-link" href="MyCourses.html">My Courses</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="GPACalc.html">My GPA</a>
@@ -52,16 +52,59 @@
 
 -->
 
-<br>
+<!-- LOGIN MODAL -->
+ <div id="modal-login" class="modal">
+   <div class="modal-content">
+     <h4>Login</h4><br />
+     <form id="login-form">
+       <div class="input-field">
+         <input type="email" id="login-email" required />
+         <label for="login-email">Email address</label>
+       </div>
+       <div class="input-field">
+         <input type="password" id="login-password" required />
+         <label for="login-password">Your password</label>
+       </div>
+       <button class="btn yellow darken-2 z-depth-0">Login</button>
+     </form>
+   </div>
+ </div>
+<!-- SIGN UP MODAL -->
+ <div id="modal-signup" class="modal">
+   <div class="modal-content">
+     <h4>Sign up</h4><br />
+     <form id="signup-form">
+       <div class="input-field">
+         <input type="email" id="signup-email" required />
+         <label for="signup-email">Email address</label>
+       </div>
+       <div class="input-field">
+         <input type="password" id="signup-password" required />
+         <label for="signup-password">Choose password</label>
+       </div>
+       <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+     </form>
+   </div>
+ </div
 
-<div class="login">
+ <!-- CREATE GUIDE MODAL -->
+  <div id="modal-create" class="modal">
+    <div class="modal-content">
+      <h4>Create Guide</h4><br />
+      <form id="create-form">
+        <div class="input-field">
+          <input type="text" id="title" required>
+          <label for="title">Guide Title</label>
+        </div>
+        <div class="input-field">
+          <textarea id="content" class="materialize-textarea" required></textarea>
+          <label for="content">Guide Content</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Create</button>
+      </form>
+    </div>
+  </div>
 
-  <p>Login: <input type="text" name="input1" class="input5A" value="">
-</p>
-  <p>Password: <input type="text" name="input1" class="input5A" value="">
-</p>
-
-</div>
 
 <div class="container features">
   <div class="row">
