@@ -82,7 +82,7 @@ const create = document.querySelector('#create-form');
 create.addEventListener('submit', (e) => {
   e.preventDefault();
   const user = firebase.auth().currentUser;
-  data.collection('users').doc(user.uid).collection('courses').add({
+  data.collection('users').doc(user.uid).collection('courses').add({ //.doc only gets strings.
     title: create['title'].value,
     content: create['content'].value
   }).then(() => {
