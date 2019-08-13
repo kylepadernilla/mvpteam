@@ -1,16 +1,20 @@
-//get data
-data.collection('courses').get().then(snapshot => {
-  setupCourses(snapshot.docs);
-});
+
 
 
 
 //how to manage status of account
 auth.onAuthStateChanged(user => {
   if (user) {
-    console.log('user logged in: ', user);
+
+    //get data.
+    data.collection('courses').get().then(snapshot => {
+    setupCourses(snapshot.docs);
+    setupUI(user);
+    });
+
   } else {
-    console.log('user logged out');
+    setupUI();
+    setupCourses([]);
   }
 })
 

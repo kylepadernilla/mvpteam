@@ -1,21 +1,64 @@
 //adding in Courses
 const courseList = document.querySelector('.courses');
+const loggedOutLinks = document.querySelectorAll('.logged-out');
+const loggedInLinks = document.querySelectorAll('.logged-in');
+
+//function that check if user exists
+const setupUI = (user) => {
+
+if(user){
+
+  //toggle ui elements.
+  loggedInLinks.forEach(item => item.style.display = 'block');
+  loggedOutLinks.forEach(item => item.style.display = 'none');
+
+}
+
+else{
+  //toggle ui elements.
+  loggedInLinks.forEach(item => item.style.display = 'none');
+  loggedOutLinks.forEach(item => item.style.display = 'block');
+
+}
+
+}
+
+//setup courses.
 const setupCourses = (data) => {
+
+
+  if(data.length){
+
   let html = '';
   data.forEach(doc => {
     const course = doc.data();
     const li = `
       <li>
-        <div class="collapsible-header grey lighten-4"> ${course.title} </div>
-        <div class="collapsible-body white"> ${course.content} </div>
+        <div class="collapsible-header grey lighten-4">
+
+         <span> ${course.title} </span>
+
+
+        </div>
+        <div class="collapsible-body white">
+
+       <p> ${course.course_code} </p>
+        <p>${course.description}</p>
+
+        </div>
       </li>
     `;
     html += li;
   });
-  courseList.innerHTML = html
+  courseList.innerHTML = html;
+
+}
+
+else{
+  courseList.innerHTML = '<h2 class= "center-align">  Login to view Courses <h2>'
+}
 
 };
-}
 
 
 // setup materialize components
