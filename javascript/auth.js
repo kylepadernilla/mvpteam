@@ -1,13 +1,9 @@
 
-
-
-
 //how to manage status of account
 auth.onAuthStateChanged(user => {
   if (user) {
-
     //get data.
-    data.collection('courses').get().then(snapshot => {
+    data.collection('courses').onSnapshot(snapshot => {
     setupCourses(snapshot.docs);
     setupUI(user);
     });
@@ -16,7 +12,24 @@ auth.onAuthStateChanged(user => {
     setupUI();
     setupCourses([]);
   }
-})
+});
+
+// add a course
+const create = document.querySelector('#create-form');
+create.addEventListener('submit', (e) => {
+  e.preventDefault();
+  data.collection('courses').add({
+    title: create['title'].value,
+    content: create['content'].value
+  }).then(() => {
+    // close the create modal & reset form
+    const modal = document.querySelector('#modal-create');
+    M.Modal.getInstance(modal).close();
+    create.reset();
+  }).catch(err => {
+    console.log(err.message);
+  });
+});
 
 // signup
 const signupForm = document.querySelector('#signup-form');
@@ -29,10 +42,14 @@ signupForm.addEventListener('submit', (e) => {
 
   // sign up the user
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
+    return data.collection('users')
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();
     signupForm.reset();
+    signupForm.querySelector('.error').innerHTML = '';
     // close the signup modal & reset form
+  }).catch (err => {
+    signupForm.querySelector('.error').innerHTML = err.message;
   });
 });
 
@@ -60,5 +77,8 @@ login.addEventListener('submit', (e) => {
     const modal = document.querySelector('#modal-login');
     M.Modal.getInstance(modal).close();
     login.reset();
+    login.querySelector('.error').innerHTML = err.message;
+  }).catch (err => {
+    login.querySelector('.error').innerHTML = err.message;
   });
 });
