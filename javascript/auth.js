@@ -22,24 +22,6 @@ auth.onAuthStateChanged(user => {
   }
 });
 
-// add a course
-const create = document.querySelector('#create-form');
-var user = firebase.auth().currentUser;
-
-create.addEventListener('submit', (e) => {
-  e.preventDefault();
-  data.collection('users').doc(user).collection('courses').add({
-    title: create['title'].value,
-    content: create['content'].value
-  }).then(() => {
-    // close the create modal & reset form
-    const modal = document.querySelector('#modal-create');
-    M.Modal.getInstance(modal).close();
-    create.reset();
-  }).catch(err => {
-    console.log(err.message);
-  });
-});
 
 // signup
 const signupForm = document.querySelector('#signup-form');
@@ -99,5 +81,24 @@ login.addEventListener('submit', (e) => {
     login.querySelector('.error').innerHTML = err.message;
   }).catch (err => {
     login.querySelector('.error').innerHTML = err.message;
+  });
+});
+
+// add a course
+const create = document.querySelector('#create-form');
+
+create.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const user = firebase.auth().currentUser;
+  data.collection('users').doc(user.uid).collection('courses').add({
+    title: create['title'].value,
+    content: create['content'].value
+  }).then(() => {
+    // close the create modal & reset form
+    const modal = document.querySelector('#modal-create');
+    M.Modal.getInstance(modal).close();
+    create.reset();
+  }).catch(err => {
+    console.log(err.message);
   });
 });
