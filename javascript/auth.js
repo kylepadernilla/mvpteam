@@ -3,18 +3,10 @@
 auth.onAuthStateChanged(user => {
   if (user) {
     //get data.
-    data.collection('courses').onSnapshot(snapshot => {
+    data.collection('users').doc(user.uid).collection('courses').onSnapshot(snapshot => {
     setupCourses(snapshot.docs);
     setupUI(user);
     });
-
-    /*users
-    function writeUserData(userId, email, password){
-      firebase.database().ref('users/' + userId).set({
-        user: email,
-        pass: password
-      })
-    } */
 
   } else {
     setupUI();
