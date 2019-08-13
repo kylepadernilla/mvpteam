@@ -8,6 +8,14 @@ auth.onAuthStateChanged(user => {
     setupUI(user);
     });
 
+    /*users
+    function writeUserData(userId, email, password){
+      firebase.database().ref('users/' + userId).set({
+        user: email,
+        pass: password
+      })
+    } */
+
   } else {
     setupUI();
     setupCourses([]);
@@ -41,28 +49,26 @@ signupForm.addEventListener('submit', (e) => {
   var password = signupForm['signup-password'].value;
 
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
+      return data.collection('users').doc(cred.user.uid).set({
+        user: email,
+        pass: password
+      });
+
+    }).then(() => {
       const modal = document.querySelector('#modal-signup');
       M.Modal.getInstance(modal).close();
       signupForm.reset();
       signupForm.querySelector('.error').innerHTML = '';
       // close the signup modal & reset form
-  }).catch (err => {
+    }).catch (err => {
     signupForm.querySelector('.error').innerHTML = err.message;
   });
 
+
+
 });
-  /* sign up the user
-  auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    const modal = document.querySelector('#modal-signup');
-    M.Modal.getInstance(modal).close();
-    signupForm.reset();
-    signupForm.querySelector('.error').innerHTML = '';
-    // close the signup modal & reset form
-  }).catch (err => {
-    signupForm.querySelector('.error').innerHTML = err.message;
-  });
-});
-*/
+
+
 
 //signout
 const logout = document.querySelector("#logout");
