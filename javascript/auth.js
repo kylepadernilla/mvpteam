@@ -37,12 +37,22 @@ signupForm.addEventListener('submit', (e) => {
   e.preventDefault();
   //preventing default because default is to refresh the screen
   // get user info
-  const email = signupForm['signup-email'].value;
-  const password = signupForm['signup-password'].value;
+  var email = signupForm['signup-email'].value;
+  var password = signupForm['signup-password'].value;
 
-  // sign up the user
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    return data.collection('users')
+      const modal = document.querySelector('#modal-signup');
+      M.Modal.getInstance(modal).close();
+      signupForm.reset();
+      signupForm.querySelector('.error').innerHTML = '';
+      // close the signup modal & reset form
+  }).catch (err => {
+    signupForm.querySelector('.error').innerHTML = err.message;
+  });
+
+});
+  /* sign up the user
+  auth.createUserWithEmailAndPassword(email, password).then(cred => {
     const modal = document.querySelector('#modal-signup');
     M.Modal.getInstance(modal).close();
     signupForm.reset();
@@ -52,6 +62,7 @@ signupForm.addEventListener('submit', (e) => {
     signupForm.querySelector('.error').innerHTML = err.message;
   });
 });
+*/
 
 //signout
 const logout = document.querySelector("#logout");
