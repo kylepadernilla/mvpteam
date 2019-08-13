@@ -24,9 +24,11 @@ auth.onAuthStateChanged(user => {
 
 // add a course
 const create = document.querySelector('#create-form');
+var user = firebase.auth().currentUser;
+
 create.addEventListener('submit', (e) => {
   e.preventDefault();
-  data.collection('courses').add({
+  data.collection('users').doc(user).collection('courses').add({
     title: create['title'].value,
     content: create['content'].value
   }).then(() => {
