@@ -2,7 +2,7 @@
 const courseList = document.querySelector('.courses');
 const loggedOutLinks = document.querySelectorAll('.logged-out');
 const loggedInLinks = document.querySelectorAll('.logged-in');
-
+const courseName =  document.querySelector('.coursename');
 //function that check if user exists
 const setupUI = (user) => {
 
@@ -42,10 +42,13 @@ const setupCourses = (data) => {
         </div>
         <div class="collapsible-body white">
 
-       <p> ${course.course_code} </p>
-        <p>${course.description}</p>
+
+        <p>${course.content}</p>
+        <a href="../calc.html">Click here to calculate your course mark</a>
 
         </div>
+
+
       </li>
     `;
     html += li;
@@ -59,6 +62,8 @@ else{
 }
 
 };
+
+//coursename.innerHTML = `<h2 class="collapsible-header grey lighten-4">${course.title}</h2>`
 
 
 // setup materialize components
