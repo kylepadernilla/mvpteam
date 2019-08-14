@@ -2,7 +2,12 @@
 
 const grades = document.querySelectorAll(".inputA");
 //const weights = document.querySelectorAll('.inputB');
-console.log(grades);
+
+var arr = $("input[name='input1']").map(function() {
+    return this.value;
+}).get();
+
+console.log(arr);
 
 /*
 create.addEventListener('submit', (e) => {
