@@ -23,13 +23,13 @@ console.log(getuid) // will log the UID
 input1.addEventListener('submit', (e) => {
   e.preventDefault();
   console.log("hello");
-  const user = firebase.auth().currentUser;
-  console.log(user);
-    data.collection('users').add({
-      inputOne: input1.value
-    }).then (() => {
-      console.log("hello");
-    }).catch (err =>{
-      console.log(err.message);
-    });
+  data.collection('users').doc(getuid).add({
+    inputOne: input1.value
+  }).then (() => {
+    console.log("hello");
+  }).catch (err =>{
+    console.log(err.message);
+  });
+
+
 });
