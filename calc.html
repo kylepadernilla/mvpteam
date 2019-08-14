@@ -53,14 +53,14 @@
 
 </p>
 
-
+<div class = "getInputs">
 <!-- Inputs -->
 <p>
 <p>Input 1:
 
-<input type="text" name="input1" class="input1A" value="">
+<input type="text" name="input1" class="inputA" value="5">
 
-<input type="text" name="input2" class="input1B" value="">
+<input type="text" name="input2" class="inputB" value="">
 </p>
 
 </p>
@@ -68,9 +68,9 @@
 <p>
 <p>Input 2:
 
-<input type="text" name="input1" class="input2A" value="">
+<input type="text" name="input1" class="inputA" value="6">
 
-<input type="text" name="input2" class="input2B" value="">
+<input type="text" name="input2" class="inputB" value="">
 </p>
 
 </p>
@@ -78,9 +78,9 @@
 <p>
 <p>Input 3:
 
-<input type="text" name="input1" class="input3A" value="">
+<input type="text" name="input1" class="inputA" value="">
 
-<input type="text" name="input2" class="input3B" value="">
+<input type="text" name="input2" class="inputB" value="">
 </p>
 
 </p>
@@ -88,9 +88,9 @@
 <p>
 <p>Input 4:
 
-<input type="text" name="input1" class="input4A" value="">
+<input type="text" name="input1" class="inputA" value="">
 
-<input type="text" name="input2" class="input4B" value="">
+<input type="text" name="input2" class="inputB" value="">
 </p>
 
 </p>
@@ -98,13 +98,13 @@
 <p>
 <p>Input 5:
 
-<input type="text" name="input1" class="input5A" value="">
+<input type="text" name="input1" class="inputA" value="">
 
-<input type="text" name="input2" class="input5B" value="">
+<input type="text" name="input2" class="inputB" value="">
 </p>
 
 </p>
-
+</div>
 <br>
 <button type="button" class="calculateButton">Calculate!</button>
 
@@ -121,8 +121,40 @@
 
 </div>
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+<!-- loads in the library -->
+<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+<!-- only want the auth and firestore libraries -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBNZG_69FyuFFABk7iD75hqkpNlboVP4oI",
+    authDomain: "gradecalc-3d79f.firebaseapp.com",
+    databaseURL: "https://gradecalc-3d79f.firebaseio.com",
+    projectId: "gradecalc-3d79f",
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  //make auth and firestore references
+  const auth =  firebase.auth();
+  const data =  firebase.firestore();
+  //initializes the database and auth in backend, all accounts will be refered to through these two constants
+
+  data.settings({timestampsInSnapshots: true});
+  //updates settings to prevent error and shows data is working with timestamps
+</script>
+<!-- Compiled and minified JavaScript -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src= "../javascript/script.js"> </script>
-<script src= "../javascript/main.js"> </script>
+<script src= "../javascript/coolStuff.js"></script>
 
 </body>
 

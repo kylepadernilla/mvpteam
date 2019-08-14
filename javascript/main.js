@@ -49,80 +49,7 @@ const setupCourses = (data) => {
 
         </div>
 
-        <div class="collapsible-body white">
-
-        <p class="topheader">
-
-        <span class="inputSec">Input #</span>
-        <span class= "grade">Grade</span>
-        <span class="weight">Weight</span>
-
-        </p>
-
-
-        <!-- Inputs -->
-        <p>
-        <p>Input 1:
-
-        <input type="text" name="input1" class="input1A" value="">
-
-        <input type="text" name="input2" class="input1B" value="">
-        </p>
-
-        </p>
-
-        <p>
-        <p>Input 2:
-
-        <input type="text" name="input1" class="input2A" value="">
-
-        <input type="text" name="input2" class="input2B" value="">
-        </p>
-
-        </p>
-
-        <p>
-        <p>Input 3:
-
-        <input type="text" name="input1" class="input3A" value="">
-
-        <input type="text" name="input2" class="input3B" value="">
-        </p>
-
-        </p>
-
-        <p>
-        <p>Input 4:
-
-        <input type="text" name="input1" class="input4A" value="">
-
-        <input type="text" name="input2" class="input4B" value="">
-        </p>
-
-        </p>
-
-        <p>
-        <p>Input 5:
-
-        <input type="text" name="input1" class="input5A" value="">
-
-        <input type="text" name="input2" class="input5B" value="">
-        </p>
-
-        </p>
-
-        <br>
-        <button type="button" class="calculateButton">Calculate!</button>
-
-        <div class="output">
-          <h3>Your Overall mark is: <input type="text" name="input2" class="total" value=""></h3>
-
-        </div>
-
-        <div class="output">
-          <h3>Your gpa for the course is: <input type="text" name="input2" step="any" class="gpaOutput" value=""></h3>
-
-        </div>
+      
         </div>
 
 
@@ -143,7 +70,7 @@ else{
 
 //coursename.innerHTML = `<h2 class="collapsible-header grey lighten-4">${course.title}</h2>`
 
-$.getScript
+
 
 // setup materialize components
 document.addEventListener('DOMContentLoaded', function() {
