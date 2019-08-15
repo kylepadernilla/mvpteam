@@ -1,7 +1,12 @@
 const input1 = document.querySelector("#input1A");
 const button = document.querySelector(".insertButton");
-console.log(input1.value);
 
+var ref= database.ref('users/input1');
+
+data.collection('user').get().then((snapshot)) => {
+
+
+}
 
 function getUser (){
   var currentUser;
