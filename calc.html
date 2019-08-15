@@ -141,18 +141,13 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  // Get a reference to the database service
-
   //make auth and firestore references
   const auth =  firebase.auth();
   const data =  firebase.firestore();
-
   //initializes the database and auth in backend, all accounts will be refered to through these two constants
 
   data.settings({timestampsInSnapshots: true});
   //updates settings to prevent error and shows data is working with timestamps
-
-
 </script>
 <!-- Compiled and minified JavaScript -->
 
