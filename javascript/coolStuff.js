@@ -1,4 +1,4 @@
-const input1 = document.querySelector('#inputA');
+const input1 = document.querySelector("#inputsList");
 console.log(input1.value);
 
 var currentUser;
@@ -20,16 +20,14 @@ console.log(getuid) // will log the UID
 
 
 
-input1.addEventListener('submit', (e) => {
+input1.addEventListener("submit", function(e) {
   e.preventDefault();
   console.log("hello");
-  data.collection('users').doc(getuid).add({
-    inputOne: input1.value
-  }).then (() => {
-    console.log("hello");
-  }).catch (err =>{
-    console.log(err.message);
-  });
+  var ref = data.collection('users').doc(getuid);
+  var merge =  ref.set({
+      inputOne: input1['input1A'].value
+  }, {merge:true});
+
 
 
 });
