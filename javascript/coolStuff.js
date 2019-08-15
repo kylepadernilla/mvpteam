@@ -15,6 +15,7 @@ function storeUser(){
         window.localStorage.setItem("UID",currentUser);
         var getuid = window.localStorage.getItem("UID")
         console.log(getuid) // will log the UID
+        console.log("hello");
     } else {
         currentUser = "Error"
         console.log(currentUser); //this returns my user object
