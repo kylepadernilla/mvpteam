@@ -1,38 +1,20 @@
 const button = document.querySelector(".insertButton");
 
-//INPUT 1
 const input1 = document.querySelector("#input1A");
+const input2 = document.querySelector("#input2A");
+const input3 = document.querySelector("#input3A");
+const input4 = document.querySelector("#input4A");
+const input5 = document.querySelector("#input5A");
 
-initialIn();
-function initialIn() {
-  getUser();
-  var getuid = window.localStorage.getItem("UID")
-  console.log(getuid) // will log the UID
-  var ref = data.collection('users').doc(getuid);
-  ref.get().then(function(doc) {
-    if (doc.exists) {
-      var data1 = doc.data();
-      var result = Object.keys(data1).map(function(key) {
-        return data1[key];
-      });
-      var rs = result[0];
-      var a = rs;
-      input1.value = a;
-    } else {
-      console.log("No such doc");
-    }
-  }).catch(function(error) {
-    console.log("Error getting doc", error);
-  });
-}
-
-function getUser (){
+function storeUser(){
   var currentUser;
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         currentUser = user.uid;
         console.log(currentUser); //this returns my user object
         window.localStorage.setItem("UID",currentUser);
+        var getuid = window.localStorage.getItem("UID")
+        console.log(getuid) // will log the UID
     } else {
         currentUser = "Error"
         console.log(currentUser); //this returns my user object
@@ -41,27 +23,64 @@ function getUser (){
       // No user is signed in.
     }
   });
+
   var getuid = window.localStorage.getItem("UID")
   console.log(getuid) // will log the UID
-};
-
-function storeUser(){
-  getUser();
   var ref = data.collection('users').doc(getuid);
   var merge =  ref.set({
-      inputOne: input1.value
+      input11: input1.value,
+      input12: input2.value,
+      input13: input3.value,
+      input14: input4.value,
+      input15: input5.value
   }, {merge:true});
 
   console.log(input1.value);
 };
+initialIn();
+function initialIn() {
+  var currentUser;
 
-//END OF INPUT 1
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        currentUser = user.uid;
+        console.log(currentUser); //this returns my user object
+        window.localStorage.setItem("UID",currentUser);
+        var getuid = window.localStorage.getItem("UID")
+        console.log(getuid) // will log the UID
+        var ref = data.collection('users').doc(getuid);
+        ref.get().then(function(doc) {
+          if (doc.exists) {
+            var data1 = doc.data();
+            var result = Object.keys(data1).map(function(key) {
+              return data1[key];
+            });
+            console.log(result);
+            var rs1 = result[0];
+            var rs2 = result[1];
+            var rs3 = result[2];
+            var rs4 = result[3];
+            var rs5 = result[4];
 
-//INPUT 2
+            input1.value = rs1;
+            input2.value = rs2;
+            input3.value = rs3;
+            input4.value = rs4;
+            input5.value = rs5;
+          } else {
+            console.log("No such doc");
+          }
+        }).catch(function(error) {
+          console.log("Error getting doc", error);
+        });
+    } else {
+        currentUser = "Error"
+        console.log(currentUser); //this returns my user object
+        window.localStorage.setItem("UID",currentUser);
+         alert(" Error in your login code");
+      // No user is signed in.
+    }
+  });
+}
 
-
-
-
-
-
-button.addEventListener('click', getUser, false);
+button.addEventListener('click', storeUser, false);
