@@ -76,13 +76,20 @@ login.addEventListener('submit', (e) => {
   });
 });
 
-// add a course
+/*add a course
 const create = document.querySelector('#create-form');
 
 create.addEventListener('submit', (e) => {
   e.preventDefault();
   const user = firebase.auth().currentUser;
-  data.collection('users').doc(user.uid).collection('courses').add({ //.doc only gets strings.
+  var ran = Math.random().toString(36);
+  console.log(ran);
+  const newid = ran;
+  console.log(typeof newid);
+  window.localStorage.setItem("NEW",newid);
+  var getnew = window.localStorage.getItem("NEW")
+  console.log(getnew);
+  data.collection('users').doc(user.uid).collection('courses').doc(newid).set({ //.doc only gets strings.
     title: create['title'].value,
     content: create['content'].value
   }).then(() => {
@@ -94,3 +101,4 @@ create.addEventListener('submit', (e) => {
     console.log(err.message);
   });
 });
+*/
