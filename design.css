@@ -95,4 +95,10 @@ body {
     padding: 40px 0;
   }
 
-  @media()
+  @media screen and (max-width: 722px) {
+    .description .border{
+      letter-spacing: 2px;
+        font-weight: 60;
+        padding-top:3px;
+    }
+  }
