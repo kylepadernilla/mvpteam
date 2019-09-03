@@ -8,11 +8,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="design.css">
 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
 </head>
 
 <body>
 <nav class="navbar navbar-expand-md">
-  <a class="navbar-brand" href="#">Logo</a>
+  <a class="navbar-brand" href="#"> <i class="fas fa-dragon" style="color: yellow;"></i></a>
   <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -28,98 +30,34 @@
         <a class="nav-link" href="GPACalc.html">My GPA</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Log in</a>
+        <a class="nav-link" href="MyCourses.html">Log in</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sign Up</a>
+        <a class="nav-link" href="MyCourses.html">Sign Up</a>
       </li>
     </ul>
   </div>
 </nav>
 
 
-<header class="page-header header container-fluid">
-</header>
-<div class="overlay">
-
-<div class="description">
-  <h1>Welcome to your Grades Calculator!</h1>
+  <div class="container-fluid description">
+    <span class="border"> Welcome to your Grades Calculator!</span>
   <p>Use this online grade calculator system to manage your grades, adding courses and the specific grade breakdowns to see your overall GPA in a course or for the year! Log in or sign up for free today!</p>
 <button class="btn btn-outline-secondary btn-lg">Tell Me More!</button>
 </div>
 
-</div>
-
-
-
-<!-- LOGIN MODAL -->
- <div id="modal-login" class="modal">
-   <div class="modal-content">
-     <h4>Login</h4><br />
-     <form id="login-form">
-       <div class="input-field">
-         <input type="email" id="login-email" required />
-         <label for="login-email">Email address</label>
-       </div>
-       <div class="input-field">
-         <input type="password" id="login-password" required />
-         <label for="login-password">Your password</label>
-       </div>
-       <button class="btn yellow darken-2 z-depth-0">Login</button>
-     </form>
-   </div>
- </div>
-<!-- SIGN UP MODAL -->
- <div id="modal-signup" class="modal">
-   <div class="modal-content">
-     <h4>Sign up</h4><br />
-     <form id="signup-form">
-       <div class="input-field">
-         <input type="email" id="signup-email" required />
-         <label for="signup-email">Email address</label>
-       </div>
-       <div class="input-field">
-         <input type="password" id="signup-password" required />
-         <label for="signup-password">Choose password</label>
-       </div>
-       <button class="btn yellow darken-2 z-depth-0">Sign up</button>
-     </form>
-   </div>
- </div
-
- <!-- CREATE GUIDE MODAL -->
-  <div id="modal-create" class="modal">
-    <div class="modal-content">
-      <h4>Create Guide</h4><br />
-      <form id="create-form">
-        <div class="input-field">
-          <input type="text" id="title" required>
-          <label for="title">Guide Title</label>
-        </div>
-        <div class="input-field">
-          <textarea id="content" class="materialize-textarea" required></textarea>
-          <label for="content">Guide Content</label>
-        </div>
-        <button class="btn yellow darken-2 z-depth-0">Create</button>
-      </form>
-    </div>
-  </div>
-
-
 <div class="container features">
   <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-12">
-      <h3 class="feature-title">My Courses</h3>
-      <img src="images/column-1.jpg" class="img-fluid">
+      <h3 class="feature-title">My Courses <i class="fas fa-book-open"></i></h3>
       <p>Add a course, your marks and corresponding weights, press calculate and find out your mark for any course. Also use this tool to manage your courses.</p>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12">
-      <h3 class="feature-title">My GPA</h3>
-      <img src="images/column-2.jpg" class="img-fluid">
+      <h3 class="feature-title">My GPA <i class="fas fa-graduation-cap"></i></h3>
       <p>Input your mark for each course and let this tool calculate your GPA for the semester!</p>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12">
-	<h3 class="feature-title">Get in Touch!</h3>
+	<h3 class="feature-title">Get in Touch! <i class="fas fa-address-card"></i></h3>
 <div class="form-group">
   <input type="text" class="form-control" placeholder="Name" name="">
 </div>
@@ -129,7 +67,7 @@
 <div class="form-group">
   <textarea class="form-control" rows="4"></textarea>
 </div>
-<input type="submit" class="btn btn-secondary btn-block" value="Send" name="">s
+<input type="submit" class="btn btn-secondary btn-block" value="Send" name="">
     </div>
   </div>
 </div>
@@ -154,6 +92,7 @@
   <div class="footer-copyright text-center">© 2019 Copyright: MyWebsite.com</div>
 </footer>
 
+</div>
 
 
 
