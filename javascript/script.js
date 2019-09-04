@@ -3,11 +3,11 @@ const calcbtn= document.querySelector(".calculateButton");
 function setGrades() {
 
 	// Define grade inputs.
-		var input1A = parseFloat(document.querySelector(".input1A").value);
-		var input2A = parseFloat(document.querySelector(".input2A").value);
-		var input3A = parseFloat(document.querySelector(".input3A").value);
-		var input4A = parseFloat(document.querySelector(".input4A").value);
-		var input5A = parseFloat(document.querySelector(".input5A").value);
+		var input1A = parseFloat(document.querySelector("#input1A").value);
+		var input2A = parseFloat(document.querySelector("#input2A").value);
+		var input3A = parseFloat(document.querySelector("#input3A").value);
+		var input4A = parseFloat(document.querySelector("#input4A").value);
+		var input5A = parseFloat(document.querySelector("#input5A").value);
 
 
 		//set the grade array.
