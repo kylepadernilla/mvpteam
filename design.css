@@ -32,15 +32,16 @@ body {
     text-align: center;
     box-sizing: border-box;
   }
-  .description .border{
-    background-color: #6ab446;
+  .description .welcome{
     color: #fff;
-    padding:5px;
-    font-size: 20px;
-    font-weight: 80;
+    padding:10px;
+    font-size: 26px;
+    font-weight: 300px;
     letter-spacing: 4px;
     text-transform: uppercase;
+    border-style: none;
   }
+
   .description p {
     color: #fff;
     font-size: 1.3rem;
