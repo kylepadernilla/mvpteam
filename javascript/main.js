@@ -45,11 +45,11 @@ const setupCourses = (data) => {
         <div class="collapsible-body white">
 
         <p>${course.content}</p>
-        <a href="../calc.html">Click here to calculate your course mark</a>
+        <a href="calc.html">Click here to calculate your course mark</a>
 
         </div>
 
-      
+
         </div>
 
 
